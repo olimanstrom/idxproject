@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>webcam recording</title>
+    <link href="styles.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.min.js"></script>
+    <script src="https://unpkg.com/ml5@1/dist/ml5.min.js"></script>
+  </head>
+  <body>
+    <h1 id="title" class="text-3xl font-bold underline">black/white</h1>
+    <div id="canvas-container">
+        <canvas id="canvas"></canvas>
+  
+    </div>
+    <button id="changeFileButton" class="mt-4 p-2 bg-blue-500 text-white rounded hover:bg-blue-700 transition duration-300">Go to Page 1, parts/color</button>
+    <script src="main.js"></script>
+    <script src="blackwhite_body_segmenation.js"></script>
+  </body>
+</html>
