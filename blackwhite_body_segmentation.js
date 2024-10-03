@@ -11,7 +11,13 @@ let video;
 let segmentation;
 
 let options = {
-  maskType: "background",
+  maskType: "person",
+};
+// to make the model perform worse!
+let segmentationConfig = {
+  flipHorizontal: false, // Flip the video horizontally
+  internalResolution: 'low', // Internal resolution of the model, verylow | low | medium | high | veryhigh
+  segmentationThreshold: 0.99, // Threshold for segmentation, a higher value will create a tighter crop around a person but may result in some pixels being that are part of a person being excluded from the returned segmentation mask.
 };
 
 function preload() {
@@ -25,7 +31,7 @@ function setup() {
   video.size(640, 480);
   video.hide();
 
-  bodySegmentation.detectStart(video, gotResults);
+  bodySegmentation.detectStart(video, gotResults, segmentationConfig);
 }
 
 function draw() {
