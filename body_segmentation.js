@@ -79,27 +79,26 @@ function createColoredMask(segmentation) {
       let r, g, b;
      
       switch (partId) {
-          //case 0: r = 255; g = 255; b = 255; break;  // white for left_face
-          //case 1: r = 255; g = 255; b = 255; break; // white for right_face
-          //case 12: r = 0; g = 0; b = 255; break; // Blue for torso_front
-          case 10: r = 0; g = 0; b = 255; break; // blue for left_hand
-          case 11: r = 0; g = 0; b = 255; break; // blue for right_hand
+        // hands
+        case 10: r = 0; g = 0; b = 255; break; // blue for left_hand
+        case 11: r = 0; g = 0; b = 255; break; // blue for right_hand
 
-          case 14: r = 128; g = 128; b = 128; break; // Gray for left_upper_leg_front
-          case 15: r = 128; g = 128; b = 128; break; // Gray for left_upper_leg_back
-          case 16: r = 128; g = 128; b = 128; break; // Gray for right_upper_leg_front
-          case 17: r = 128; g = 128; b = 128; break; // Gray for right_upper_leg_back
-          case 18: r = 128; g = 128; b = 128; break; // Gray for left_lower_leg_front
-          case 19: r = 128; g = 128; b = 128; break; // Gray for left_lower_leg_back
-          case 20: r = 128; g = 128; b = 128; break; // Gray for right_lower_leg_front
-          case 21: r = 128; g = 128; b = 128; break; // Gray for right_lower_leg_back
+        // legs
+        case 14: r = 128; g = 128; b = 128; break; // Gray for left_upper_leg_front
+        case 15: r = 128; g = 128; b = 128; break; // Gray for left_upper_leg_back
+        case 16: r = 128; g = 128; b = 128; break; // Gray for right_upper_leg_front
+        case 17: r = 128; g = 128; b = 128; break; // Gray for right_upper_leg_back
+        case 18: r = 128; g = 128; b = 128; break; // Gray for left_lower_leg_front
+        case 19: r = 128; g = 128; b = 128; break; // Gray for left_lower_leg_back
+        case 20: r = 128; g = 128; b = 128; break; // Gray for right_lower_leg_front
+        case 21: r = 128; g = 128; b = 128; break; // Gray for right_lower_leg_back
 
-          case 22: r = 0; g = 0; b = 255; break; // blue for left_foot
-          case 23: r = 0; g = 0; b = 255; break; // blue for right_foot
+        // feet
+        case 22: r = 0; g = 0; b = 255; break; // blue for left_foot
+        case 23: r = 0; g = 0; b = 255; break; // blue for right_foot
 
-          //case 14: r = 255; g = 255; b = 0; break; // Yellow for left_upper_leg_front
-          // Add more cases here for other parts
-          default: r = 255; g = 255; b = 255; break; // Gray for unspecified parts
+        // all other parts
+        default: r = 255; g = 255; b = 255; break; // Gray for unspecified parts
       }
 
       // Apply the color to the mask
