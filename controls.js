@@ -1,17 +1,6 @@
-// Toggle between modes and restart segmentation
-/*
-document.getElementById('toggleMode').addEventListener('click', function () {
-    currentMode = currentMode === 'Invisble' ? 'fullBody' : 'Invisble';
-    console.log(`Switching to ${currentMode} mode`);
-    startSegmentation(currentMode);
-  });
-  
-  // Hook up recording start/stop if needed
-  document.getElementById('startRecording').addEventListener('click', startRecording);
-  document.getElementById('stopRecording').addEventListener('click', stopRecording);
-*/
-
 // Add event listener for keypresses to switch modes
+// F for fullbody
+// I for invisible
  document.addEventListener('keydown', function (event) {
     if (event.key === 'f' || event.key === 'F') {
       currentMode = 'fullBody';
