@@ -29,11 +29,13 @@
     let currentMode = 'betterPerformance';  // Track the current mode
 
     let optionsBetterPerformance = {
-      maskType: "parts"  // Configuration for better performance
+      maskType: "parts",  // Configuration for better performance
+      //flipped: true,  // Flip the video horizontally
     };
 
     let optionsFullBody = {
       maskType: "parts",  // Configuration for full body
+      //flipped: true,  // Flip the video horizontally
     };
 
     // Function to reset and start the segmentation model
@@ -88,43 +90,13 @@
       startSegmentation(currentMode);
     });
 
-    // Function to create custom colored mask for segmentation
-    /*
     function createColoredMask(segmentation) {
       let imgData = segmentation.imageData;
       let coloredMask = createImage(imgData.width, imgData.height);
       coloredMask.loadPixels();
 
-      for (let y = 0; y < imgData.height; y++) {
-        for (let x = 0; x < imgData.width; x++) {
-          let index = (x + y * imgData.width) * 4;
-          let partId = imgData.data[index];
-
-          // Set custom colors based on body part ID
-          let r, g, b;
-          switch (partId) {
-            // Set color for body parts
-            case 10: r = 0; g = 0; b = 255; break; // blue for left_hand
-            case 11: r = 0; g = 0; b = 255; break; // blue for right_hand
-            // Add colors for other body parts...
-            default: r = 128; g = 128; b = 128; break; // Gray for unspecified parts
-          }
-          coloredMask.pixels[index] = r;
-          coloredMask.pixels[index + 1] = g;
-          coloredMask.pixels[index + 2] = b;
-          coloredMask.pixels[index + 3] = imgData.data[index + 3]; // Maintain alpha
-        }
-      }
-      coloredMask.updatePixels();
-      return coloredMask;
-    }
-      */
-
-    // Function to create custom colored mask for segmentation
-    function createColoredMask(segmentation) {
-      let imgData = segmentation.imageData;
-      let coloredMask = createImage(imgData.width, imgData.height);
-      coloredMask.loadPixels();
+      // Define unwanted part IDs to skip, only used in betterPerformance mode
+      let unwantedPartIds = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
       for (let y = 0; y < imgData.height; y++) {
         for (let x = 0; x < imgData.width; x++) {
@@ -135,9 +107,11 @@
 
           // Mode-specific processing
           if (currentMode === 'betterPerformance') {
-            // In betterPerformance mode, only render legs and hands
-            if ([10, 11, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23].includes(partId)) {
-              // Hands (10, 11) and legs (14-23) get their own colors
+            // Skip unwanted part IDs in betterPerformance mode
+            if (unwantedPartIds.includes(partId)) {
+              r = 255; g = 255; b = 255; // White (or transparent if needed)
+            } else {
+              // Paint selected parts
               switch (partId) {
                 case 10: r = 0; g = 0; b = 255; break; // Blue for left_hand
                 case 11: r = 0; g = 0; b = 255; break; // Blue for right_hand
@@ -151,16 +125,16 @@
                 case 21: r = 128; g = 128; b = 128; break; // Gray for right_lower_leg_back
                 case 22: r = 0; g = 0; b = 255; break; // Blue for left_foot
                 case 23: r = 0; g = 0; b = 255; break; // Blue for right_foot
-                default: r = 255; g = 255; b = 255; break; // White (invisible) for anything else
+                default: r = 255; g = 255; b = 255; break; // White for other parts in betterPerformance mode
               }
-            } else {
-              // Make other body parts invisible in betterPerformance mode
-              r = 255; g = 255; b = 255; // White (invisible)
             }
           } else {
-            // Full body mode: Render all parts
+            // Full body mode: Render all parts, no skipping
             switch (partId) {
-              case 0: r = 255; g = 224; b = 189; break; // Light skin tone for face
+              case 0: r = 255; g = 224; b = 189; break; // Skin tone for face
+              case 1: r = 255; g = 224; b = 189; break; // Skin tone for ears
+              case 2: r = 255; g = 224; b = 189; break; // Skin tone for neck
+              case 3: r = 255; g = 224; b = 189; break; // Skin tone for forehead
               case 10: r = 0; g = 0; b = 255; break; // Blue for left_hand
               case 11: r = 0; g = 0; b = 255; break; // Blue for right_hand
               case 12: r = 128; g = 128; b = 128; break; // Gray for torso front
@@ -189,6 +163,7 @@
       coloredMask.updatePixels();
       return coloredMask;
     }
+
 
 
     // Start p5.js
