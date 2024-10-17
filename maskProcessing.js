@@ -20,7 +20,7 @@ function createColoredMask(segmentation, mode) {
     let coloredMask = createImage(imgData.width, imgData.height);
     coloredMask.loadPixels();
 
-    const unwantedPartIds = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];  // Used in Invisible mode
+    const unwantedPartIds = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 13];  // Used in Invisible mode
 
     for (let y = 0; y < imgData.height; y++) {
         for (let x = 0; x < imgData.width; x++) {
@@ -55,27 +55,33 @@ function createColoredMask(segmentation, mode) {
     // Colors for Invisible mode (focusing on hands and legs)
     function getPerformanceModeColor(partId) {
     switch (partId) {
-        case 10: case 11: return [0, 0, 255];     // Blue for hands
-        case 14: case 15: case 16: case 17:       // Gray for upper legs
-        case 18: case 19: case 20: case 21:       // Gray for lower legs
-        return [128, 128, 128];
-        case 22: case 23: return [0, 0, 255];     // Blue for feet
-        default: return [255, 255, 255];          // White for other parts
+        // back whole body
+        case 15: case 17: case 19: case 21: return [42, 128, 78]; // middle green
+        // front whole body
+        case 14: case 16: case 18: case 20: return [99, 197, 179]; // light green
+        // right side of the body
+        case 11: case 23: return [218, 203, 100]; // yellow
+        // left side of the body
+        case 10: case 22: return [255, 109, 62]; // white
+        default: return [255, 255, 255]; // white
     }
 }
 
 // Colors for fullBody mode (renders all body parts)
 function getFullBodyModeColor(partId) {
     switch (partId) {
-        case 0: case 1: case 2: case 3:           // Skin tone for face, ears, neck, and forehead
-        return [255, 224, 189];
-        case 10: case 11: return [0, 0, 255];     // Blue for hands
-        case 12: case 13:                         // Gray for torso (front and back)
-        return [128, 128, 128];
-        case 14: case 15: case 16: case 17:       // Gray for upper legs (front and back)
-        case 18: case 19: case 20: case 21:       // Gray for lower legs (front and back)
-        return [128, 128, 128];
-        case 22: case 23: return [0, 0, 255];     // Blue for feet
-        default: return [128, 128, 128];          // Default gray for unspecified parts
+        // torso front and back
+        case 12: case 13: return [0, 96, 78]; // dark green
+        // back whole body
+        case 3: case 5: case 7: case 9: case 15: 
+        case 17: case 19: case 21: return [42, 128, 78]; // middle green
+        // front whole body
+        case 2: case 4: case 6: case 8: case 14: 
+        case 16: case 18: case 20: return [99, 197, 179]; // light green
+        // right side of the body
+        case 1: case 11: case 23: return [218, 203, 100]; // yellow
+        // left side of the body
+        case 0: case 10: case 22: return [255, 109, 62]; // orange
+        default: return [255, 255, 255]; // white
     }
 }
