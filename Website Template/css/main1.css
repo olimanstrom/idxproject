@@ -4,7 +4,7 @@ body {
     margin: 0 ;
     color: #432A19;
     overflow-x: hidden;
-    background-color: #cadbc5;
+    background-color: rgb(0 , 96 ,78);
     padding: 0;
 }
 
@@ -61,25 +61,38 @@ header h1 {
     color: #1b1b1b;
 }
 
-header p {
+p {
     font-size: 1.2em;
-    color: #5b5b5b;
+    color: rgb(252, 249, 229);
 }
 
 
+/*
 .images {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    max-width: 80%;
+    max-width: 50%;
+    left: 100px;
 }
+    */
 
 h2 {
     font-size: 2em;
+    color: rgb(252, 249, 229);
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 10px;
+    margin-inline-end: 10px;
+    font-weight: bold;
+    unicode-bidi: isolate;
 }
 
 a {
+    margin: 50px;
     text-decoration: none;
+    color: rgb(252, 249, 229);
 }
 
 /* Displaying the photos */
@@ -114,7 +127,7 @@ footer {
 }
 
 footer h2 {
-    border-top: #8A6859 solid 1px;
+    border-top: rgb(252, 249, 229) solid 1px;
     width: 50%;
 }
 
@@ -135,40 +148,9 @@ footer h2 {
     padding: 20px;
 }
 
-.right-section {
-    top: 50px;
-    left: 30px;
-}
-
-.left-section {
-    top: 50px;
-    left: 30px;
-}
-
-.middle-section {
-    position: absolute;
-    top: 750px;
-    left: 45%;
-    width: 50%;
-}
-
-.lower-right-section {
-    position: absolute;
-    top: 1000px;
-    right: 0;
-    width: 45%;
-}
-
-.lower-left-section {
-    position: absolute;
-    top: 1100px;
-    left: 0;
-    width: 45%;
-}
-
 .pink-lines {
     position: absolute;
-    top: 280px;
+    top: 940px;
     left: 0;
     width: 100%;
     height: auto;
@@ -176,11 +158,11 @@ footer h2 {
 }
 .Floorplan {
     position: absolute;
-    top: 230px;
+    top: 780px;
     left: 0;
     width: 100%;
     height: auto;
-    z-index: 0; /* Placera bakom innehållet */
+    z-index: -1; /* Placera bakom innehållet */
 }
 
 .eyes {
@@ -194,11 +176,111 @@ footer h2 {
 
 
 
+.img1 {
+    color: rgb(0 , 96 ,78);
+    background-color: rgb(0 , 96 ,78);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url(img/Img1.png);
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+}
 
 
+.text1 {
+    position: absolute;
+    margin: 20px;
+    padding: 30px;
+    max-width: 50vw;
+    text-justify: inter-word;
+    text-align: center;
+    left: 170px;
+}
 
+.text2 {
+    position: absolute;
+    margin: 20px;
+    padding: 30px;
+    max-width: 50vw;
+    text-justify: inter-word;
+    text-align: center;
+    left: 900px;
+}
 
+.text3 {
+    position: absolute;
+    margin: 20px;
+    padding: 30px;
+    max-width: 50vw;
+    text-justify: inter-word;
+    text-align: center;
+    left: 600px;
+    top: 1200px;
+}
 
+.text4 {
+    position: absolute;
+    margin: 20px;
+    padding: 30px;
+    max-width: 50vw;
+    text-justify: inter-word;
+    text-align: center;
+    left: 800px;
+    top: 1600px;
+}
+
+.text5 {
+    position: absolute;
+    margin: 20px;
+    padding: 30px;
+    max-width: 50vw;
+    text-justify: inter-word;
+    text-align: center;
+    left: 180px;
+    top: 1500px;
+}
+
+.text6 {
+    position: absolute;
+    margin: 20px;
+    padding: 30px;
+    max-width: 50vw;
+    text-justify: inter-word;
+    text-align: center;
+    left: 180px;
+    top: 2200px;
+}
+
+.text7 {
+    position: absolute;
+    margin: 20px;
+    padding: 30px;
+    max-width: 50vw;
+    text-justify: inter-word;
+    text-align: center;
+    left: 950px;
+    top: 2100px;
+}
+
+.textFooter {
+    position: absolute;
+    top: 2650px;
+    left: 590px;
+    text-align: center;
+}
+
+.team {
+    position: absolute;
+    top: 2800px;
+    left: 300px;
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    max-width: 60%;
+
+}
 
 
 /*
