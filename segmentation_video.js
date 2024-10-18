@@ -25,10 +25,6 @@ function setup() {
   video = createCapture(VIDEO);
   video.size(640, 480);
   video.hide();
-
-  // Set up buttons for starting and stopping recording
-  document.getElementById("startRecording").addEventListener("click", startRecording);
-  document.getElementById("stopRecording").addEventListener("click", stopRecording);
 }
 
 function draw() {

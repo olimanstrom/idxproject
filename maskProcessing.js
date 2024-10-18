@@ -27,12 +27,12 @@ function createColoredMask(segmentation, mode) {
         let index = (x + y * imgData.width) * 4;
         let partId = imgData.data[index];
 
-        let [r, g, b] = [255, 255, 255];  // Default white
+        let [r, g, b] = [0, 0, 0];  // Default black
 
         if (mode === 'Invisible') {
             // Skip unwanted part IDs in Invisible mode
             if (unwantedPartIds.includes(partId)) {
-            [r, g, b] = [255, 255, 255];  // White (skipping part)
+            [r, g, b] = [0, 0, 0];  // White (skipping part)
             } else {
             [r, g, b] = getPerformanceModeColor(partId);
             }
@@ -63,7 +63,7 @@ function createColoredMask(segmentation, mode) {
         case 11: case 23: return [218, 203, 100]; // yellow
         // left side of the body
         case 10: case 22: return [255, 109, 62]; // white
-        default: return [255, 255, 255]; // white
+        default: return [0, 0, 0]; // white
     }
 }
 
@@ -82,6 +82,6 @@ function getFullBodyModeColor(partId) {
         case 1: case 11: case 23: return [218, 203, 100]; // yellow
         // left side of the body
         case 0: case 10: case 22: return [255, 109, 62]; // orange
-        default: return [255, 255, 255]; // white
+        default: return [0, 0, 0]; // white
     }
 }

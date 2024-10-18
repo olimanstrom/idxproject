@@ -1,7 +1,7 @@
 let bodySegmentation;
 let video;
 let segmentation;
-let currentMode = 'Invisible';  // Track the current mode
+let currentMode = 'FullBody';  // Track the current mode
 
 const optionsInvisible = {
   maskType: 'parts',
@@ -14,7 +14,7 @@ const optionsFullBody = {
 // Function to start the body segmentation model
 function startSegmentation(mode) {
   segmentation = null;
-  const options = mode === 'Invisible' ? optionsInvisible : optionsFullBody;
+  const options = mode === 'FullBody' ? optionsInvisible : optionsFullBody;
 
   // Stop any ongoing detection before starting a new one
   if (bodySegmentation) {
@@ -46,7 +46,7 @@ function initializeVideo() {
 }
 
 function drawSegmentation() {
-  background(255);
+  background(0);
   if (segmentation) {
     let coloredMask = createColoredMask(segmentation, currentMode);
     let xPosition = (width - 640) / 2;
