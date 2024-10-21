@@ -11,10 +11,7 @@ function startSegmentation() {
 
   document.getElementById('playButton').disabled = true;
   document.getElementById('stopButton').disabled = false;
-  // Hide play button and show stop button if needed
-  //document.getElementById("playButton").style.display = "none";
-  //document.getElementById("stopButton").style.display = "inline-block";
-
+  
   video = createCapture(VIDEO);
   video.size(640, 480);
   video.hide(); // Hide the video element itself, as we're using the canvas
@@ -31,12 +28,6 @@ function startSegmentation() {
 function stopSegmentation() {
   document.getElementById('stopButton').disabled = true;
   document.getElementById('playButton').disabled = false;
-
-   // Hide stop button and show play button if needed
-   /*
-   document.getElementById("stopButton").style.display = "none";
-   document.getElementById("playButton").style.display = "inline-block";
-   */
 
   if (bodySegmentation) {
     bodySegmentation.detectStop();
