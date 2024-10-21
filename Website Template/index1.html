@@ -5,112 +5,162 @@
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="css/main1.css" rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.min.js"></script>
+        <script src="https://unpkg.com/ml5@1/dist/ml5.min.js"></script>
     </head>    
 
     <body>
-        <section>
-            <img src="img/Img1.png" alt="img1" class="img1"/>
-        </section>
-        <section>
+        <!-- Wrapping content inside a main container -->
+        <div class="main-container">
+            <header>
+                <img src="img/Img1.png" alt="img1" class="img1"/>
+            </header>
 
-            <div class="content"> 
-                <img src="img/Floorplan.png" alt="Floorplan" class="Floorplan"/>
-                <img src="img/pink-lines.svg" alt="pink-lines" class="pink-lines"/>
+             <!-- Navigation Links -->
+            <nav>
+                <ul>
+                    <li><a href="#section1">The Invisibility Suit</a></li>
+                    <li><a href="#section2">Body Segmentation</a></li>
+                    <li><a href="#section3">Smart Home Surveillance</a></li>
+                    <li><a href="#section4">PROJECT TEAM</a></li>
+                </ul>
+            </nav>
 
-                <div class="text1">
-                    <p> 
-                        Här kommer det massa text 
-                    </p>
-                </div>
-                <div class="text2">
-                    <p> 
-                        Här kommer det massa text 
-                    </p>
-                </div>
-                <div class="text3">
-                    <p> 
-                        Här kommer det massa text eller bild
-                    </p>
-                </div>
-                <div class="text4">
-                    <p> 
-                        Här kommer det massa text eller bild
-                    </p>
-                </div>
-                <div class="text5">
-                    <p> 
-                        Här kommer det massa text eller bild
-                    </p>
-                </div>
-                <div class="text6">
-                    <p> 
-                        Här kommer det massa text eller bild
-                    </p>
-                </div>
-                <div class="text7">
-                    <p> 
-                        Här kommer det massa text eller bild
-                    </p>
-                </div>
+            <!-- First Section with Carousel -->
+            <section id="#section1">
+                <hr>
+                <div class="content"> 
+                    <div class="left-content">
+                        <h2>The Invisibility Suit</h2>
+                        <p>Här kommer det massa text</p>
+                    </div>
 
-            </div>
+                    <!-- Vertical line between text and carousel -->
+                    <div class="vertical-line"></div>
 
-        </section>
-        <section>
+                    <div class="right-carousel">
+                        <div class="carousel-container">
+                            <!-- Carousel images -->
+                            <img src="img/Motiv1.png" class="carousel-images" alt="Slide 1">
+                            <img src="img/Motiv2.png" class="carousel-images" alt="Slide 2">
+                            <img src="img/Motiv3.png" class="carousel-images" alt="Slide 3">
+
+                            <!-- Navigation buttons -->
+                            <span class="prev" onclick="changeSlide(-1)">&#10094;</span>
+                            <span class="next" onclick="changeSlide(1)">&#10095;</span>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+            </section>
+
+            <!-- Second Section with title and ML5 -->
+            <section id="#section2">
+                <div class="second_container">
+                    <h2>Body Segmentation</h2>
+                    <p>Try to fool the body segmentation model</p>
+
+                     
+
+                    <div id="canvas-container">
+                        <!-- Button to start and stop body segmentation -->
+                        <div class="controls">
+                            <button id="playButton" class="play-pause-button">▶</button>
+                            <button id="stopButton" class="play-pause-button">||</button>
+                        </div>
+                    </div>
+                    <script src="body_segmentation.js"></script>
+                </div>
+                <hr>
+            </section>
+
+            <section id="#section3">
+                <div class="content_three_columns">
+                    <div class="left-content2">
+                        <h2>Smart Home Surveillance</h2>
+                        <p>text </p>
+                    </div>                    
+
+                    <div class="middle-content">
+                        <h2>Critical Design</h2>
+                        <p>text </p>
+
+                    </div>
+
+                    <div class="right-content">
+                        <h2>Scandals</h2>
+                        <p>text </p>
+
+                    </div>
+                </div>
+                <hr>
+            </section>
+        </div>
+
+        <!-- Footer section -->
+        <footer id="#section4">
             <div class="textFooter">
-                <h2>
-                    PROJECT TEAM
-                </h2>
+                <h2>PROJECT TEAM</h2>
             </div>
 
             <div class="team">
-
-                    <div class="col">
-                        <img src="img/Filippa.png" alt="" class="placeholder"/>
-                        <div class="name">
-                            <p>Filippa Petterzon</p>
-
-                            <a href="mailto: josef.widestrom@chalmers.se">
-                                <img src="img/Email.png" alt="Email icon">
-                            </a>
-                        </div>
+                <div class="col">
+                    <img src="img/Filippa.png" alt="" class="placeholder"/>
+                    <div class="name">
+                        <p>Filippa Petterzon</p>
+                        <a href="mailto: josef.widestrom@chalmers.se">
+                            <img src="img/Email.png" alt="Email icon">
+                        </a>
                     </div>
-                    <div class="col">
-                        <img src="img/Olivia.png" alt="" class="placeholder"/>
-                        <div class="name">
-                            <p>Olivia Månström</p>
-                            
-                            <a href="mailto: .oliman@chalmers.se">
-                                <img src="img/Email.png" alt="Email icon">
-                            </a>
-                        </div>
+                </div>
+                <div class="col">
+                    <img src="img/Olivia.png" alt="" class="placeholder"/>
+                    <div class="name">
+                        <p>Olivia Månström</p>
+                        <a href="mailto: .oliman@chalmers.se">
+                            <img src="img/Email.png" alt="Email icon">
+                        </a>
                     </div>
-					<div class="col">
-                        <img src="img/Tove.png" alt="" class="placeholder"/>
-                        <div class="name">
-                            <p>Tove Nilsson</p>
-                     
-                            <a href="mailto: .toveni@chalmers.se">
-                                <img src="img/email.png" alt="Email icon">
-                            </a>
-                        </div>
+                </div>
+                <div class="col">
+                    <img src="img/Tove.png" alt="" class="placeholder"/>
+                    <div class="name">
+                        <p>Tove Nilsson</p>
+                        <a href="mailto: .toveni@chalmers.se">
+                            <img src="img/email.png" alt="Email icon">
+                        </a>
                     </div>
-                    <div class="col">
-                        <img src="img/Wilma.png" alt="" class="placeholder"/>
-                        <div class="name">
-                            <p>Wilma Bergman</p>
-                     
-                            <a href="mailto: .haelias@chalmers.se">
-                                <img src="img/email.png" alt="Email icon">
-                            </a>
-                        </div>
+                </div>
+                <div class="col">
+                    <img src="img/Wilma.png" alt="" class="placeholder"/>
+                    <div class="name">
+                        <p>Wilma Bergman</p>
+                        <a href="mailto: .haelias@chalmers.se">
+                            <img src="img/email.png" alt="Email icon">
+                        </a>
                     </div>
-                    
-            
-                
-
+                </div>
             </div>
-            
-        </section>
+        </footer>
+
+        <script>
+            let slideIndex = 0;
+            showSlide(slideIndex);
+    
+            function changeSlide(n) {
+                showSlide(slideIndex += n);
+            }
+    
+            function showSlide(n) {
+                let i;
+                let slides = document.getElementsByClassName("carousel-images");
+                if (n >= slides.length) {slideIndex = 0}    
+                if (n < 0) {slideIndex = slides.length - 1}
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";  
+                }
+                slides[slideIndex].style.display = "block";  
+            }
+        </script>
     </body>
 </html>

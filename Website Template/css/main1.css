@@ -1,13 +1,53 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+html {
+    scroll-behavior: smooth; /* Enable smooth scrolling */
+}
 
 body {
     font-family: 'Open Sans', sans-serif;
-    margin: 0 ;
+    margin: 0;
     color: #432A19;
-    overflow-x: hidden;
+    /*overflow-x: hidden;*/
     background-color: rgb(0 , 96 ,78);
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /*cursor: url('img/eye3.png'), auto;*/
 }
 
+.main-container {
+    flex: 1;
+}
+
+nav {
+    margin: 10px 0; /* Space between header and navigation */
+}
+
+nav ul {
+    list-style: none; /* Remove default list styles */
+    padding: 0; /* Remove padding */
+    display: flex; /* Use flexbox for horizontal alignment */
+}
+
+nav li {
+    margin-right: 20px; /* Space between links */
+}
+
+nav a {
+    text-decoration: none; /* Remove underline from links */
+    color: #333; /* Change link color */
+}
+
+nav a:hover {
+    text-decoration: underline; /* Underline on hover for better interaction */
+}
+
+/*
 .container {
     width: 100%;
     height: 100%;
@@ -19,17 +59,18 @@ body {
 }
 
 .container2 {
-    display: flex; /* Activate Flexbox layout */
-    flex-direction: column; /* Stack children vertically */
-    width: 100%; /* Full width of the parent */
-    padding: 20px; /* Add padding for aesthetics */
+    display: flex; 
+    flex-direction: column; 
+    width: 100%; 
+    padding: 20px; 
 }
 
 div {
-    flex: 1; /* This will expand to take available height */
-    display: flex; /* Optional: Activate Flexbox for content sections */
-    flex-wrap: wrap; /* Allow items to wrap if necessary */
+    flex: 1;
+    display: flex; 
+    flex-wrap: wrap;
 }
+*/
 
 
 header {
@@ -64,6 +105,77 @@ header h1 {
 p {
     font-size: 1.2em;
     color: rgb(252, 249, 229);
+}
+
+/* Style for the section container */
+.second_container {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically (if you want to align to the middle of the viewport) */
+    text-align: center; /* Center the title text */
+    padding: 20px;
+}
+
+/* Center the canvas container */
+#canvas-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /*margin-top: 20px;*/ /* Space between title and canvas */
+}
+
+
+.content_three_columns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; /* Center horizontally */
+    padding: 20px;
+}
+
+.content_three_columns > div {
+    flex: 1; /* Take up equal space */
+    padding: 0px;
+}
+
+.left-content2 {
+    text-align: center;
+}
+.middle-content {
+    text-align: center;
+}
+.right-content {
+    text-align: center;
+}
+
+/*button play and pause*/
+.controls {
+    position: absolute; /* Positioning the controls */
+    top: 10px; /* Distance from the top */
+    left: 10px; /* Distance from the left */
+    z-index: 10; /* Ensure buttons are above the canvas */ 
+}
+
+.play-pause-button {
+    background-color: rgba(0, 96, 78, 0.3);; 
+    border: none;
+    color:  rgb(0 , 96 ,78);              
+    padding: 7px 10px;       
+    font-size: 24px;           
+    cursor: pointer;           
+    margin: 0 0px;           
+    border-radius: 5px;       
+    transition: background-color 0.3s; 
+}
+
+#stopButton {
+    padding: 8px 15px;
+}
+
+.play-pause-button:hover {
+    background-color: rgba(0, 96, 78, 0.5);
 }
 
 
@@ -115,8 +227,62 @@ a {
     border: 1px solid rgb(139, 139, 139);
 }
 
-/* Footer */
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 0px;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
 
+footer .textFooter {
+    text-align: center;
+}
+
+footer .team {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+footer .col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer img.placeholder {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+footer h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+footer .name {
+    margin-top: 10px;
+}
+
+footer .name a img {
+    width: 24px;
+    height: 24px;
+    margin-top: 5px;
+}
+
+/* General responsive styles */
+@media (max-width: 768px) {
+    footer .team {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Footer */
+/*
 footer {
     position: relative;
     display: flex;
@@ -135,9 +301,11 @@ footer h2 {
     width: 90%;
     border-radius: 50%;
 }
+*/
 
 
 /* Innehåll layout */
+/*
 .content {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -154,15 +322,15 @@ footer h2 {
     left: 0;
     width: 100%;
     height: auto;
-    z-index: 0; /* Placera bakom innehållet */
-}
+    z-index: 0; 
+    }
 .Floorplan {
     position: absolute;
     top: 780px;
     left: 0;
     width: 100%;
     height: auto;
-    z-index: -1; /* Placera bakom innehållet */
+    z-index: -1; 
 }
 
 .eyes {
@@ -172,6 +340,7 @@ footer h2 {
     width: 100%;
     height: auto;
 }
+*/
 
 
 
@@ -181,13 +350,13 @@ footer h2 {
     background-color: rgb(0 , 96 ,78);
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url(img/Img1.png);
+    /*background-image: url(img/Img1.png);*/
     flex-direction: column;
     justify-content: flex-start;
     width: 100%;
 }
 
-
+/*
 .text1 {
     position: absolute;
     margin: 20px;
@@ -262,13 +431,15 @@ footer h2 {
     left: 950px;
     top: 2100px;
 }
-
+*/
+/*
 .textFooter {
     position: absolute;
     top: 2650px;
     left: 590px;
     text-align: center;
 }
+
 
 .team {
     position: absolute;
@@ -281,84 +452,79 @@ footer h2 {
     max-width: 60%;
 
 }
-
-
-/*
-@media screen and (max-width: 800px) {
-
-    .modes {
-        height: 250px;
-    }
-
-
-    .placeholder {
-        width: 40%;
-    }
-
-    h2 {
-        font-size: 1.5em;
-    }
-
-    .extra {
-        display: inline-block;
-    }
-
-    .images {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .images .col {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        width: 100%;
-        margin-bottom: 5%;
-    }
-
-    .col img {
-        margin-right: 10%;
-    }
-
-    .name {
-        text-align: left;
-    }
-
-    html, body {
-        overflow-x: hidden;
-    }
-
-    body {
-    position: relative
-    }
-
-    .logo {
-        background-color: red;
-    }
-	*/
-
-
-/* Main */
-/*
-main {
-    text-align: center;
-}
-
-main section {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    padding-bottom: 4%;
-}
-
-<main>
-			<p> [Add some information about your project here. You can make this more attractive by changing the css
-			     and adding some images if you like.]</p>
-			<p> [Some groups divide this into sections and use the same information as they put on the poster for the 
-				exhibition. You can divide this into sections on one page, or have multiple pages. But you can also
-                keep it very short and plain. Remember though that the website remains public and is a way to demonstrate
-                your work to potential employers who may not have seen your poster or visited the exhibition.]	</p>			
-          
-            </main>
-
 */
+/*olivia*/
+
+.content {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space between text and carousel */
+    align-items: stretch; /* Vertically center both parts */
+    /*padding: 20px;*/
+    height: 100%;
+}
+
+hr {
+    border: none;
+    border-top: 2px solid rgb(252, 249, 229); /* Adjust thickness and color */
+    width: 100%; /* Adjust the width to be 80% of the container */
+    margin: 20px auto; /* Center it and add spacing above and below */
+}
+
+/* Vertical line between text and carousel */
+.vertical-line {
+    width: 2px; /* Line width */
+    background-color: rgb(252, 249, 229); /* Line color */
+    height: auto; /* Let the height adjust based on parent */
+    align-self: stretch; /* Make sure the line stretches to match the tallest element */
+    margin: 0 20px; /* Space on the sides of the line */
+}
+
+/* Left content (Title and text) */
+.left-content {
+    flex: 1; /* Take up equal space */
+    padding-right: 20px; /* Add space to the right */
+}
+
+/* Right content (Carousel) */
+.right-carousel {
+    flex: 1; /* Take up equal space */
+    text-align: center; /* Center carousel content */
+}
+
+.carousel-container {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+}
+
+.carousel-images {
+    /*
+    display: none;
+    width: 100%;
+    */
+    display: none;
+    width: 50%; /* Set the width to 50% of the parent container */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 1000px; /* Optionally, set a maximum height */
+    object-fit: contain; /* Ensure the image fits inside the container without stretching */
+    margin: auto; /* Center the image horizontally */
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
