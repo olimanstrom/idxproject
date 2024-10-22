@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>INVISUIT</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/main.css" rel="stylesheet" />
+        <!-- ML5 & P5 -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.min.js"></script>
+        <script src="https://unpkg.com/ml5@1/dist/ml5.min.js"></script>
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rosario:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+    </head>    
+
+    <body>
+        <div class="main-container">
+            <header>
+                <img src="img/header.png" alt="image of the logo" class="img1"/>
+                <img src="img/header_text.png" alt="image of the title" class="img1"/>
+            </header>
+    
+            <nav>
+                <ul>
+                    <li><a href="#section1">The Invisuit</a></li>
+                    <li><a href="#section2">Body Segmentation</a></li>
+                    <li><a href="#section3">Why</a></li>
+                    <li><a href="#section4">Team</a></li>
+                </ul>
+            </nav>
+
+            <!-- First Section with Carousel -->
+            <section id="section1">
+                <hr>
+                <div class="content"> 
+                    <div class="left-content">
+                        <h2>The Invisuit</h2>
+                        <p>
+                            Through this project, we explore scenarios in which you might want 
+                            to be invisible and go unnoticed by your smart home. Want to cheat? 
+                            Sneak out? Have a midnight snack? Or just have some privacy? We ask ourselves 
+                            about the future we can expect when we have smart home cameras with 
+                            AI-powered human recognition integrated throughout our homes. 
+                            - Think of the Invisuit as a way to safeguard your privacy in the future 
+                            of smart homes!
+                        </p>
+                        <p>
+                            We have created our very own invisibility suit, to allow you to freely and 
+                            unnoticed live in your own home. The suit works by confusing the camera with 
+                            light, patterns, and shapes.
+                        </p>
+                        <p>
+                            The Invisuit is a critical design project, aiming criticism of smart home 
+                            devices that surveil users through their own cameras. The Invisuit offers 
+                            participants the opportunity to reflect on the data collection practices 
+                            inherent in smart home surveillance systems.
+                        </p>
+                    </div>
+
+                    <div class="right-carousel">
+                        <div class="carousel-container">
+                            <!-- Carousel images -->
+                            <img src="img/suit3.png" class="carousel-images" alt="invisibility suit">
+                            <img src="img/suit2.png" class="carousel-images" alt="invisibility suit">
+                            <img src="img/invisuit.png" class="carousel-images" alt="Invisibility suit">
+                            <img src="img/invisuit_dark.png" class="carousel-images" alt="invisibility suit when it's dark">
+
+                            <!-- Navigation buttons -->
+                            <span class="prev" onclick="changeSlide(-1)">&#10094;</span>
+                            <span class="next" onclick="changeSlide(1)">&#10095;</span>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+            </section>
+
+            <!-- Second Section with ML5 body segmentation -->
+            <section id="section2">
+                <div class="second_container">
+                    <h2>Body Segmentation</h2>
+                    <p>Throughout the Invisuit project, the machine learning library <a href="https://ml5js.org/">ml5.js’s</a> Body Segmentation model was used. 
+                        This model identifies 24 different parts of the human body in near real-time.
+                         The model was adapted and reworked to fit our project and was an important part of prototyping the suit. </p>
+                    <p>Feel free to try it for yourself!</p>
+
+                     
+
+                    <div id="canvas-container">
+                        <!-- Button to start and stop body segmentation -->
+                        <div class="controls">
+                            <button id="playButton" class="play-pause-button">▶</button>
+                            <button id="stopButton" class="play-pause-button">||</button>
+                        </div>
+                    </div>
+                    <script src="body_segmentation.js"></script>
+                </div>
+                <hr>
+            </section>
+
+            <section id="section3">
+                <div class="content_three_columns">
+                    <div class="left-content2">
+                        <h2>Home Cameras</h2>
+                        <p>Although the Invisuit makes you 'invisible' to the cameras, 
+                            it doesn’t mean the surveillance stops. The cameras are still active, 
+                            still collecting data, even if they fail to capture a clear image. 
+                            This part of the experience is a metaphor for how smart home devices work. 
+                            Even if their purpose isn't to see everything they do. 
+
+                            In 2023 approximately 51% of Americans had smart home cameras in their home, 
+                            and it is predicted to increase by 82,7% aka 81.84 million households worldwide, 
+                            according to <a href="https://www.futuremarketinsights.com/reports/smart-home-security-camera-market">Future Market Insights</a>.
+                            </p>
+                    </div>                    
+
+                    <div class="middle-content">
+                        <h2>Critical Design</h2>
+                        <p>The Inivisuit is a critical design project that aims for its 
+                            user to reflect on the data they are consenting to share by 
+                            installing smart home IoT solutions in their own homes. It 
+                            probes the questions for future home scenarios where smart
+                             homes constantly collect data about their residents. <br> <br>
+                              Would you ever want to be invisible? Could you be? </p>
+                        
+
+                    </div>
+
+                    <div class="right-content">
+                        <h2>Scandals</h2>
+                        <p>There have been many scandals surrounding smart home appliances
+                             as well as their data collection. Some examples are when it 
+                             was revealed that 
+                             <a href="https://www.aftonbladet.se/nyheter/a/rEJX38/tidigare-anstallda-pa-verisure-berattar-bilder-av-nakna-kunder-cirkulerade-internt-200-sekunder-granskar">Verisure</a> 
+                             employees were watching and sharing 
+                             photos from their customer's homes; When <a href="https://www.forbes.com/sites/kashmirhill/2012/02/16/how-target-figured-out-a-teen-girl-was-pregnant-before-her-father-did/">Target</a> 
+                             found out about 
+                             one teenager's pregnancy and made the teenager's father find out 
+                             through their advertisement; When <a href="https://www.cnet.com/home/ring-will-stop-sharing-video-with-police-with-some-exceptions-heres-what-it-means-for-you/">Amazon Ring</a> 
+                             shared home surveillance 
+                             footage with law enforcement without consent from its users; 
+                             When <a href="https://www.ftc.gov/news-events/news/press-releases/2023/05/ftc-says-ring-employees-illegally-surveilled-customers-failed-stop-hackers-taking-control-users">Amazon Ring</a> 
+                             allowed the employees to access private customer
+                              videos and lacked basic security implementations, thus allowing hackers 
+                              control of consumers accounts, cameras, and videos - compromising the 
+                              customers' privacy.</p>
+                    </div>
+                </div>
+                <hr>
+            </section>
+        </div>
+
+        <!-- Footer section -->
+        <footer id="section4">
+            <div class="textFooter">
+                <h2>PROJECT TEAM</h2>
+            </div>
+
+            <div class="team">
+                <div class="col">
+                    <img src="img/Filippa.png" alt="" class="placeholder"/>
+                    <div class="name">
+                        <p>Filippa Petterzon</p>
+                        <a href="mailto: filippa.petterzon@gmail.com">
+                            <img src="img/Email.png" alt="Email icon">
+                        </a>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="img/Olivia.png" alt="" class="placeholder"/>
+                    <div class="name">
+                        <p>Olivia Månström</p>
+                        <a href="mailto: olivia@manstrom.se">
+                            <img src="img/Email.png" alt="Email icon">
+                        </a>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="img/Tove.png" alt="" class="placeholder"/>
+                    <div class="name">
+                        <p>Tove Nilsson</p>
+                        <a href="mailto: toveni@chalmers.se">
+                            <img src="img/email.png" alt="Email icon">
+                        </a>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="img/Wilma.png" alt="" class="placeholder"/>
+                    <div class="name">
+                        <p>Wilma Bergman</p>
+                        <a href="mailto: wilmabe@chalmers.se">
+                            <img src="img/email.png" alt="Email icon">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            let slideIndex = 0;
+            showSlide(slideIndex);
+    
+            function changeSlide(n) {
+                showSlide(slideIndex += n);
+            }
+    
+            function showSlide(n) {
+                let i;
+                let slides = document.getElementsByClassName("carousel-images");
+                if (n >= slides.length) {slideIndex = 0}    
+                if (n < 0) {slideIndex = slides.length - 1}
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";  
+                }
+                slides[slideIndex].style.display = "block";  
+            }
+        </script>
+    </body>
+</html>

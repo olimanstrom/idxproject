@@ -1,0 +1,368 @@
+@font-face {
+    font-family: 'Enchanted Tales'; 
+    src: url('/css/font.otf') format('otf'); 
+    font-weight: normal; 
+    font-style: normal; 
+}
+
+html, body {
+    margin: 2rem;
+    padding: 0;
+    height: 100%;
+    cursor: url('eye5.png'), auto;
+
+}
+html {
+    scroll-behavior: smooth; /* Enable smooth scrolling */
+}
+
+body {
+    font-family: 'Rosario';
+    
+    margin: 0;
+    background-color: rgb(0 , 96 ,78);
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+}
+
+.main-container {
+    flex: 1;
+}
+
+nav {
+    width: 100%; 
+    padding: 2rem 0rem 0rem 0rem; 
+    text-align: center; 
+}
+
+
+a {
+    color: rgb(252, 249, 229);
+    font-family: 'Enchanted Tales', 'Open Sans', sans-serif;
+    letter-spacing: 2px; 
+    cursor: url('eye-closed2.png'), auto;
+}
+
+p > a {
+    color: rgb(252, 249, 229);
+    font-family: 'Rosario';
+    letter-spacing: 0;
+    cursor: url('eye-closed2.png'), auto;
+}
+
+nav ul li a {
+    color: rgb(252, 249, 229);
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+nav li {
+    margin-right: 0px; 
+}
+
+nav a {
+    text-decoration: none; 
+}
+
+nav a:hover {
+    text-decoration: underline; 
+}
+
+/* Style the header container */
+header {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap; /* To make images wrap on smaller screens */
+}
+
+
+/* Style the images in the header */
+header img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;           
+}
+
+/* Mobile layout (for screens smaller than 768px) */
+@media only screen and (max-width: 768px) {
+    header {
+        display: block;
+        text-align: center;
+    }
+
+    header img {
+        width: 70%;
+    }
+
+    nav ul {
+        display: block; 
+    }
+
+    nav ul li {
+        margin: 10px 0; 
+    }
+} 
+
+p {
+    font-size: 1.2em;
+    color: rgb(252, 249, 229);
+    text-align: justify; /* makes text align like a rectangle */
+}
+
+/* Style for the section container */
+.second_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+#canvas-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+
+.content_three_columns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 20px;
+}
+
+.content_three_columns > div {
+    flex: 1; 
+    padding: 10px;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between; 
+}
+
+.left-content2 p, .middle-content p, .right-content p {
+    margin-bottom: auto;
+}
+
+.left-content2, .middle-content, .right-content {
+    text-align: center;
+}
+
+
+
+@media only screen and (max-width: 768px) {
+    .content_three_columns {
+        display: block;     
+    }
+    .left-content2, .middle-content, .right-content {
+        width: 100%;       
+        margin-bottom: 20px; 
+    }
+}
+
+/*button play and pause*/
+.controls {
+    position: absolute; 
+    top: 10px; /* Distance from the top */
+    left: 10px; /* Distance from the left */
+    z-index: 10; /* Ensure buttons are above the canvas */ 
+}
+
+.play-pause-button {
+    background-color: rgba(0, 96, 78, 0.3);; 
+    border: none;
+    color:  rgb(0 , 96 ,78);              
+    padding: 7px 10px;       
+    font-size: 24px;           
+    cursor: url('eye-closed2.png'), auto;
+    margin: 0 0px;           
+    border-radius: 5px;       
+    transition: background-color 0.3s; 
+}
+
+#stopButton {
+    padding: 8px 15px;
+}
+
+.play-pause-button:hover {
+    background-color: rgba(0, 96, 78, 0.5);
+}
+
+
+
+h2 {
+    font-size: 2em;
+    color: rgb(252, 249, 229);
+    display: block;
+    font-family: 'Enchanted Tales', 'Open Sans', sans-serif;
+    letter-spacing: 2px; 
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 0px 0px 30px 0px;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
+
+footer .textFooter {
+    text-align: center;
+}
+
+footer .team {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+footer .col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer img.placeholder {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+footer h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+footer .name {
+    margin-top: 10px;
+}
+
+footer .name a img {
+    width: 24px;
+    height: 24px;
+    margin-top: 5px;
+}
+
+@media (max-width: 768px) {
+    footer .team {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+@media only screen and (max-width: 793px) {
+    .content {
+        display: block;
+    }
+
+    .left-content .right-carousel {
+        width: 100%;
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left-content {
+        text-align: center;
+        height: auto;
+        margin-top: 6rem;
+        width: 100% !important;
+    }
+
+    .right-carousel {
+        text-align: center;
+    }
+}
+hr {
+    border: none;
+    border-top: 2px solid rgb(252, 249, 229);
+    width: 100%;
+    margin: 20px auto;
+}
+
+.left-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    width: 50%;
+}
+
+.left-content h2 {
+    margin-top: -80px;
+}
+
+.right-carousel {
+    flex: 1;
+    text-align: center;
+}
+
+.carousel-container {
+    position: relative;
+    max-width: 60%;
+    max-height: 300px;
+    min-height: 600px;
+    margin: auto;
+    background-color: #ADC5AD;
+    border-radius: 20px;
+    padding: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.carousel-images {
+    display: none;
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+    object-fit: contain;
+    margin: auto;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 96, 78, 0.3);
+    color: rgb(0, 96, 78);
+    font-size: 24px;
+    padding: 8px 10px;
+    cursor: url('eye-closed2.png'), auto;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
